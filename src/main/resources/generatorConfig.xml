@@ -23,7 +23,7 @@
         <!--生成pojo类存放位置-->
         <javaModelGenerator targetPackage="com.example.blog.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
-            <property name="trimStrin gs" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成xml映射文件存放位置-->
         <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
@@ -35,6 +35,7 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
+        <!--enableXXX:设置这些属性为false则不生成相应的Example类 -->
         <table tableName="sys_log" domainObjectName="SysLog" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
@@ -57,7 +58,9 @@
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="content" javaType="java.lang.String" jdbcType="VARCHAR"/>
         </table>
+
         <table tableName="tbl_article_info" domainObjectName="ArticleInfo" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
@@ -65,28 +68,35 @@
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="tbl_article_message" domainObjectName="ArticleMessage" enableCountByExample="false"
+        <table tableName="tbl_article_comment" domainObjectName="ArticleComment" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="tbl_message" domainObjectName="Message" enableCountByExample="false"
+        <table tableName="tbl_comment" domainObjectName="Comment" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="tbl_sort_info" domainObjectName="SortInfo" enableCountByExample="false"
+        <table tableName="tbl_category_info" domainObjectName="CategoryInfo" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="tbl_article_sort" domainObjectName="ArticleSort" enableCountByExample="false"
+        <table tableName="tbl_article_category" domainObjectName="ArticleCategory" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <property name="my.isgen.usekeys" value="true"/>
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="tbl_article_picture" domainObjectName="ArticlePicture" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
